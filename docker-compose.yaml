@@ -1,0 +1,28 @@
+version: "3.7"
+
+
+services:
+  redis:
+    image: redis:latest
+    healthcheck:
+      test: [ "CMD", "redis-cli","ping" ]
+      timeout: 5s
+      interval: 5s
+      retries: 5
+    expose:
+      - "6379"
+
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: sh run.sh
+    volumes:
+    - .:/emerald
+    ports:
+      - "5000:5000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    env_file:
+      - ./.env

@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sanic = "*"
+databases = {extras = ["mysql"], version = "*"}
+uvicorn = "*"
+pydantic = "*"
+environs = "*"
+ipython = "*"
+isort = "*"
+sanic-redis = "*"
+
+[dev-packages]
+pre-commit = "*"
+pytest = "*"
+black = "==19.10b0"
+flake8 = "*"
+autoflake = "*"
+
+[requires]
+python_version = "3.8"

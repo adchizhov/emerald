@@ -1,0 +1,22 @@
+repos:
+  - repo: local
+    hooks:
+      - id: autoflake
+        name: autoflake
+        entry: pipenv run autoflake --in-place --remove-all-unused-imports --ignore-init-module-imports -r .
+        language: system
+        types: [python]
+        require_serial: true
+  - repo: https://github.com/asottile/seed-isort-config
+    rev: v1.9.1
+    hooks:
+      - id: seed-isort-config
+  - repo: https://github.com/timothycrosley/isort
+    rev: '4.3.21'
+    hooks:
+      - id: isort
+  - repo: https://github.com/psf/black
+    rev: '19.10b0'
+    hooks:
+      - id: black
+        language_version: python3.8
