@@ -19,7 +19,7 @@
 DEBUG=False - режим запуска приложения  
 APP_HOST=0.0.0.0 - хост на котором запускать приложение  
 APP_PORT=5000 - порт приложение  
-REDIS_HOST=redis - хост redis 
+REDIS_HOST=redis - хост redis  
 REDIS_PORT=6379 - порт redis  
 REDIS_DATABASE=0 - дефолтная 0 бд redis  
 CDN_HOST=cdn-host.com - хост cdn на который нужно редиректить  
